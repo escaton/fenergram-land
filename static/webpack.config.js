@@ -1,6 +1,8 @@
 global.Promise = require('bluebird');
 var webpack = require('webpack');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
+var dev = process.env.ENV !== 'production';
+var noop = function () {};
 
 module.exports = {
     entry: {
@@ -12,20 +14,37 @@ module.exports = {
     },
     module: {
         loaders: [
-            { test: /\.css$/, loader: ExtractTextPlugin.extract("style-loader", "css-loader") },
-            { test: /\.png$/, loader: "url-loader?limit=100000" }
+            { test: /\.less$/, loader: ExtractTextPlugin.extract("style-loader", "css-loader!less-loader") },
+            { test: /\.css$/,  loader: ExtractTextPlugin.extract("style-loader", "css-loader") },
+            { test: /\.png$/,  loader: "url-loader?limit=100000" }
         ]
     },
     resolve: {
         alias: {
-            'jquery': __dirname + '/bower_components/jquery/dist/jquery.js',
-            'owl.carousel': __dirname + '/bower_components/owl.carousel/dist/owl.carousel.min.js'
-        }
+            'jquery': 'jquery/dist/jquery' + (dev ? '' : '.min') + '.js',
+            'owl.carousel': 'owl.carousel/dist/owl.carousel.min.js'
+        },
+        root: __dirname,
+        modulesDirectories: ['bower_components', 'node_modules']
     },
     noParse: [
-        /[\/\\]bower_components[\/\\](jquery|owl\.carousel).*!/
+        /*/[\/\\]bower_components[\/\\](jquery|owl\.carousel).*!/*/
     ],
     plugins: [
-        new ExtractTextPlugin("[name].css")
+        new ExtractTextPlugin("[name].css"),
+        new webpack.ProvidePlugin({
+            $: 'jquery',
+            jQuery: 'jquery',
+            'window.jQuery': 'jquery'
+        }),
+        !dev ? new webpack.optimize.UglifyJsPlugin({
+            compress: {
+                warnings: false
+            },
+            sourceMap: false,
+            mangle: {
+                except: []
+            }
+        }) : noop
     ]
 };

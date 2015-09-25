@@ -1,3 +1,5 @@
+require('owl.carousel');
+
 module.exports = function (scroll) {
     scroll.owlCarousel({
         items: 1,
