@@ -3,7 +3,7 @@
 var path = require('path'),
     recluster = require('recluster'),
     mkdirp = require('mkdirp'),
-    FS = require('fs'),
+    fs = require('fs'),
     os = require('os'),
     log = require('npmlog'),
     pkg = require(__dirname + '/package.json'),
@@ -35,8 +35,8 @@ cluster.on('disconnect', function (worker) {
     if (isNaN(socket)) {
         mkdirp.sync(path.dirname(socket));
 
-        if (FS.existsSync(socket)) {
-            FS.unlinkSync(socket);
+        if (fs.existsSync(socket)) {
+            fs.unlinkSync(socket);
         }
     }
 })();
