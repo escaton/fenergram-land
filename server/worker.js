@@ -1,12 +1,26 @@
 'use strict';
 
 var Express = require('express');
+var serveStatic = require('serve-static');
 var config = require('config');
+var environment = process.env.NODE_ENV || 'development';
+var Ua = require('./lib/ua');
+var path = require('path');
 
 var app = Express();
 
-app.get('*', function(req, res) {
-    res.send('pong');
+// if (environment === 'development') {
+//     app.use(serveStatic('../static/dist', {'index': ['index.html']}));
+// }
+
+app.get('/', function(req, res) {
+    var ua = Ua(req.headers['user-agent']);
+
+    if (ua.isMobile) {
+        res.sendFile(path.join(config.static.path, 'index.' + ua.platform.toLowerCase() + '.html'));
+    } else {
+        res.sendFile(path.join(config.static.path, 'index.html'));
+    }
 });
 
 app.listen(config.server.socket);

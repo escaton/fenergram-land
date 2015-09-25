@@ -7,7 +7,7 @@ var path = require('path'),
     os = require('os'),
     log = require('npmlog'),
     pkg = require(__dirname + '/package.json'),
-    environment = process.env.NODE_ENV
+    environment = process.env.NODE_ENV || 'development';
 
 process.env.NODE_CONFIG_DIR = path.join(__dirname, 'configs');
 
