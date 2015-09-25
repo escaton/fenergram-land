@@ -1,5 +1,7 @@
 'use strict';
 
+var path = require('path');
+
 module.exports = {
     app: {
         version: '0'
@@ -9,5 +11,8 @@ module.exports = {
     },
     server: {
         socket: 8081
+    },
+    static: {
+        path: path.join(__dirname, '..', '..', 'static', 'dist')
     }
 };

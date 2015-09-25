@@ -5,20 +5,24 @@
  * @returns {String}
  */
 function getMobileOperatingSystem(userAgent) {
-  if( userAgent.match( /iPad/i ) || userAgent.match( /iPhone/i ) || userAgent.match( /iPod/i ) )
-  {
-    return 'iOS';
-
-  }
-  else if( userAgent.match( /Android/i ) )
-  {
-
-    return 'Android';
-  }
-  else
-  {
-    return 'unknown';
-  }
+    if( userAgent.match( /iPad/i ) || userAgent.match( /iPhone/i ) || userAgent.match( /iPod/i ) ) {
+        return {
+            isMobile: true,
+            platform: 'iOS'
+        };
+    }
+    else if( userAgent.match( /Android/i ) ) {
+        return {
+            isMobile: true,
+            platform: 'Android'
+        };
+    }
+    else {
+        return {
+            isMobile: false,
+            platform: 'pc'
+        };
+    }
 }
 
 module.exports = getMobileOperatingSystem;
