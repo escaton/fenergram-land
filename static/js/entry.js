@@ -1,2 +1,3 @@
-var ua = require('./ua')(navigator.userAgent || navigator.vendor || window.opera);
-alert(ua);
+var goo = 'foo';
+console.log(goo);
+
