@@ -1,16 +1,18 @@
 {
-  "name": "fenerbahce-land",
+  "name": "fenerbahce-land-static",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev-static": "(cd static && npm run dev)"
+    "dev": "webpack-dev-server --progress --colors"
   },
   "author": "",
   "license": "MIT",
   "dependencies": {
+    "webpack": "^1.12.2"
   },
   "devDependencies": {
+    "webpack-dev-server": "^1.12.0"
   }
 }
