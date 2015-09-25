@@ -16,8 +16,6 @@ var app = Express();
 app.get('/', function(req, res) {
     var ua = Ua(req.headers['user-agent']);
 
-    console.log('123', req.headers['user-agent']);
-
     if (ua.isMobile) {
         res.sendFile(path.join(config.static.path, 'index.' + ua.platform.toLowerCase() + '.html'));
     } else {
