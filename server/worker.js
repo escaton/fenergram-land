@@ -6,6 +6,7 @@ var config = require('config');
 var environment = process.env.NODE_ENV || 'development';
 var Ua = require('./lib/ua');
 var path = require('path');
+var log = require('npmlog');
 
 var app = Express();
 
@@ -23,4 +24,6 @@ app.get('/', function(req, res) {
     }
 });
 
-app.listen(config.server.socket);
+app.listen(config.server.socket, function() {
+    log.info('app', 'Start listen on ' + config.server.socket);
+});
