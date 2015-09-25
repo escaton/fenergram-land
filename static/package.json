@@ -11,6 +11,7 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
+    "bluebird": "^2.10.1",
     "bower": "^1.5.3",
     "extract-text-webpack-plugin": "^0.8.2",
     "webpack": "^1.12.2"
