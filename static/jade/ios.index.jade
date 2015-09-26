@@ -8,4 +8,4 @@ include blocks/page
             - var scrollData = [ { title: 'Team wins' }, { title: 'Logo' } ]
             each elem, index in scrollData
                 .scroll__elem
-                    img(src='./images/feature#{index + 1}.jpg', alt='Feature #{index}', title=elem.title)
+                    img(src='/public/img/feature#{index + 1}.jpg', alt='Feature #{index}', title=elem.title)

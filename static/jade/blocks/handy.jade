@@ -1,3 +1,6 @@
 div(class=['handy', 'handy_type_' + bundleName])
-    .handy__screen
-        .scroll
+    .handy__screen.scroll.owl-carousel.owl-theme
+        - var scrollData = [ { title: 'Team wins' }, { title: 'Logo' } ]
+        each elem, index in scrollData
+            .scroll__elem
+                img(src='/public/img/feature#{index + 1}.jpg', alt='Feature #{index}', title=elem.title)

@@ -2,8 +2,20 @@
     background-repeat: no-repeat;
     width: 1156px;
     height: 1508px;
+    position: relative;
 }
 
 .handy_type_desktop, .handy_type_ios {
     background-image: url('/public/img/handy-ios.png');
+    @deviceWith: 495px;
+    .handy__screen {
+        position: absolute;
+        right: 196px;
+        top: 170px;
+        width: @deviceWith;
+        height: 880px;
+    }
+    .scroll__elem {
+        width: @deviceWith;
+    }
 }
