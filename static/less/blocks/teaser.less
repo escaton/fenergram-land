@@ -1,5 +1,6 @@
 @import 'handy';
 @import 'market';
+@teaserWidth: 1030px;
 
 .teaser {
     padding: 190px 0;
@@ -23,7 +24,7 @@
 .teaser__container {
     position: relative;
     z-index: 1;
-    width: 1030px;
+    width: @teaserWidth;
     padding-left: 60px;
     margin: 0 auto;
 }
@@ -59,6 +60,11 @@
 .teaser__dots {
     margin-bottom: 40px;
     .owl-dot {
+        -webkit-user-select: none;
+           -moz-user-select: none;
+            -ms-user-select: none;
+                user-select: none;
+
         display: inline-block;
         box-sizing: border-box;
         padding: 4px;
