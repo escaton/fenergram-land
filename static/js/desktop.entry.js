@@ -4,5 +4,5 @@ require('../less/desktop.less');
 /* logic */
 
 $(document).ready(function () {
-    $('body').text('desktop page loaded')
+    $('body').append('<p>desktop page loaded</p>')
 });
