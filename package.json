@@ -9,7 +9,7 @@
     "static": "(cd static && npm run static)",
     "postinstall": "(cd static && npm i)",
     "gh": "bash tools/gh.sh",
-    "deploy": "bash tools/deploy.sh"
+    "deploy": "(cd static && npm run static) && bash tools/deploy.sh"
   },
   "author": "",
   "license": "MIT",
