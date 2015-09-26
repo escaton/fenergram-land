@@ -10,7 +10,7 @@ module.exports = {
         workersCount: 1
     },
     server: {
-        socket: 8081
+        socket: '/opt/fenegram/fenegram.sock'
     },
     static: {
         path: path.join(__dirname, '..', '..', 'static', 'dist')
