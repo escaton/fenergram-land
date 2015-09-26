@@ -21,7 +21,7 @@ module.exports = {
     },
     resolve: {
         alias: {
-            'jquery': 'jquery/dist/jquery' + (dev ? '' : '.min') + '.js',
+            /*'jquery': 'jquery/dist/jquery' + (dev ? '' : '.min') + '.js',*/
             'owl.carousel': 'owl.carousel/dist/owl.carousel.min.js'
         },
         root: __dirname,
@@ -32,6 +32,9 @@ module.exports = {
     ],
     plugins: [
         new ExtractTextPlugin("[name].css"),
+        new webpack.ResolverPlugin([
+            new webpack.ResolverPlugin.DirectoryDescriptionFilePlugin("bower.json", ["main"])
+        ], ["normal", "loader"]),
         new webpack.ProvidePlugin({
             $: 'jquery',
             jQuery: 'jquery',
