@@ -30,6 +30,6 @@ build/Release
 node_modules
 
 _shared
-
+dist.zip
 static/dist/
 static/bower_components/
