@@ -2,7 +2,7 @@
 @import 'market';
 
 .teaser {
-    padding: 126px 0;
+    padding: 190px 0;
     background: url('/public/img/teaser-1.jpg') 50% 50% no-repeat;
     height: 660px;
     box-sizing: border-box;
@@ -42,14 +42,41 @@
 }
 
 .teaser__text {
-    padding: 20px 0;
+    margin-bottom: 15px;
 }
 
 .teaser__handy {
-    position: absolute;
-    right: 0;
-    top: -90px;
+    position: relative;
+    float: right;
+    margin-top: -150px;
     z-index: 2;
+}
+
+.teaser__dots {
+    margin-bottom: 40px;
+    .owl-dot {
+        display: inline-block;
+        box-sizing: border-box;
+        padding: 4px;
+        margin-right: 10px;
+        @dotSize: 20px;
+        width: @dotSize;
+        height: @dotSize;
+        border: 1px solid rgba(255, 255, 255, .4);
+        border-radius: 50%;
+        position: relative;
+        cursor: pointer;
+        &.active {
+            border: 1px solid rgba(255, 255, 255, 1);
+            span {
+                width: @dotSize - 10px;
+                height: @dotSize - 10px;
+                display: block;
+                background-color: #fff;
+                border-radius: 50%;
+            }
+        }
+    }
 }
 
 /*@media (max-width: @widthDesktop) {
