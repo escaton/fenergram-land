@@ -1,30 +1,59 @@
 @import 'handy';
+@import 'market';
 
 .teaser {
-    padding: 240px 80px;
-    background: url('/public/img/teaser.jpg') 50% 50% no-repeat;
-    background-size: cover;
-    height: 1300px;
+    padding: 126px 0;
+    background: url('/public/img/teaser-1.jpg') 50% 50% no-repeat;
+    height: 660px;
     box-sizing: border-box;
     position: relative;
     z-index: 2;
+    &:before {
+        position: absolute;
+        content: '';
+        z-index: 0;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, .55);
+    }
+}
+
+.teaser__container {
+    position: relative;
+    z-index: 1;
+    width: 1030px;
+    padding: 0 110px 0 60px;
+    margin: 0 auto;
+}
+
+.teaser__content {
+    padding: 0 70px 10px @logoWith + 30px;
+    color: #fff;
+    width: 380px;
+    box-sizing: content-box;
+}
+
+.teaser__title {
+    font-size: 70px;
+    margin: 0;
+    line-height: 1em;
 }
 
 .teaser__text {
-    padding: 50px 70px 10px @logoWith + 70px;
-    color: #fff;
-    max-width: 760px;
-    box-sizing: border-box;
+    padding: 20px 0;
 }
 
 .teaser__handy {
     position: absolute;
     right: 0;
-    top: 170px;
+    top: -90px;
+    z-index: 2;
 }
 
-@media (max-width: @widthDesktop) {
+/*@media (max-width: @widthDesktop) {
     .teaser__handy {
-        position: relative;
+        display: none;
     }
-}
+}*/

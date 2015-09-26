@@ -6,5 +6,4 @@ var scroller = require('./lib/scroll');
 
 $(document).ready(function () {
     var scroll = scroller($('.scroll'));
-    $('body').append('<p>desktop page loaded</p>')
 });
