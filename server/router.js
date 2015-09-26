@@ -8,12 +8,14 @@ var path = require('path');
 var index = require('./controllers/index');
 var share = require('./controllers/share');
 var botstore = require('./controllers/botstore');
+var adduser = require('./controllers/adduser');
 
 module.exports = function(app) {
 
     app.get('/', index.index);
     app.get('/share/:preset?', share.index);
     app.get('/~app/botstore', botstore.index)
+    app.get('/add/:login', adduser.index)
 
     if (environment === 'development') {
         app.use(serveStatic(config.static.path));

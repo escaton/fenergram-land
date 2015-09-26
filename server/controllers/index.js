@@ -6,6 +6,9 @@ var Ua = require('../lib/ua');
 var path = require('path');
 
 exports.index = function(req, res) {
-    var ua = Ua(req.headers['user-agent']);
+    var ua = Ua(req);
+
+    // temp
+    ua.platform = 'desktop';
     res.sendFile(path.join(config.static.path, ua.platform.toLowerCase() + '.index' + '.html'));
 }
