@@ -5,19 +5,22 @@
  * @returns {String}
  */
 function getMobileOperatingSystem(userAgent) {
-    if( userAgent.match( /iPad/i ) || userAgent.match( /iPhone/i ) || userAgent.match( /iPod/i ) ) {
+    if ( userAgent.match( /iPad/i ) || userAgent.match( /iPhone/i ) || userAgent.match( /iPod/i ) ) {
         return {
             isMobile: true,
             platform: 'iOS'
         };
-    }
-    else if( userAgent.match( /Android/i ) ) {
+    } else if ( userAgent.match( /Android/i ) ) {
         return {
             isMobile: true,
             platform: 'Android'
         };
-    }
-    else {
+    } else if ( userAgent.match( /facebookexternalhit/i ) ) {
+        return {
+            isBot: true,
+            platform: 'facebook'
+        };
+    } else {
         return {
             isMobile: false,
             platform: 'desktop'
