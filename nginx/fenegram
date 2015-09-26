@@ -1,11 +1,11 @@
 server {
-        listen 80;
-        #listen [::]:80 ipv6only=on;
+    listen 80;
+    #listen [::]:80 ipv6only=on;
     server_name fenegram.org;
     server_name www.fenegram.com;
     location / {
-            return 301 http://fenegram.com$request_uri;
-        }
+        return 301 http://fenegram.com$request_uri;
+    }
 }
 
 server {
@@ -21,8 +21,8 @@ server {
     location / {
         expires 24h;
         proxy_pass http://unix:/opt/fenegram/fenegram.sock;
-            include proxy_params;
-            proxy_set_header X-NginX-Proxy true;
-            proxy_redirect off;
+        include proxy_params;
+        proxy_set_header X-NginX-Proxy true;
+        proxy_redirect off;
     }
 }
