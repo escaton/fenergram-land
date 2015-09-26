@@ -27,6 +27,10 @@ if (environment === 'development') {
     app.use(serveStatic(path.join(config.static.path, '..')));
 }
 
+app.get('*', function(req, res) {
+    res.sendStatus(404);
+});
+
 app.listen(config.server.socket, function() {
     log.info('app', 'Start listen on ' + config.server.socket);
 });
