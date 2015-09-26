@@ -15,19 +15,20 @@ app.disable('x-powered-by');
 app.enable('trust proxy');
 app.disable('etag');
 
-// if (environment === 'development') {
-//     app.use(serveStatic('../static/dist', {'index': ['index.html']}));
-// }
-
 app.get('/', function(req, res) {
 
     var ua = Ua(req.headers['user-agent']);
+    res.sendFile(path.join(config.static.path, ua.platform.toLowerCase() + '.index' + '.html'));
 
-    if (ua.isMobile) {
-        res.sendFile(path.join(config.static.path, 'index.' + ua.platform.toLowerCase() + '.html'));
-    } else {
-        res.sendFile(path.join(config.static.path, 'index.html'));
-    }
+});
+
+if (environment === 'development') {
+    app.use(serveStatic(config.static.path));
+    app.use(serveStatic(path.join(config.static.path, '..')));
+}
+
+app.get('*', function(req, res) {
+    res.sendStatus(404);
 });
 
 app.listen(config.server.socket, function() {

@@ -20,7 +20,7 @@ function getMobileOperatingSystem(userAgent) {
     else {
         return {
             isMobile: false,
-            platform: 'pc'
+            platform: 'desktop'
         };
     }
 }
