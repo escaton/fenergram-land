@@ -1,4 +1,4 @@
-rsync -avzh ./ fenegram.com:/opt/fenegram/app \
+rsync -avzh ./ fenegram@fenegram.com:/opt/fenegram/app \
     --exclude .git \
     --exclude static/node_modules \
     --exclude static/bower_components \
