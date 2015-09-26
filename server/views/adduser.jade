@@ -1,9 +1,55 @@
 html
     head
         meta(name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1")
-
+        style.
+            * {
+                margin: 0;
+                padding: 0;
+            }
+            html, body {
+                min-height: 100%;
+            }
+            body {
+                background: #1d3863;
+                height: 100%;
+            }
+            .center {
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                width: 300px;
+                height: 100px;
+                margin: auto;
+                text-align: center;
+                font-family: sans-serif;
+            }
+            .title {
+                color: #fff;
+                font-weight: 100;
+                font-size: 20px;
+            }
+            .login {
+                color: #fee407;
+            }
+            .button {
+                color: #000;
+                background: #feda60;
+                padding: 10px 18px;
+                margin: 20px 0px;
+                display: inline-block;
+                border-radius: 2px;
+                text-decoration: none;
+            }
     body
         div.center
             div.icon
-            div.login @#{login}
-            a(href="#{url}").button add to fenegram
+            div.title Add&nbsp;
+                span.login @#{login}
+                |&nbsp;to fenegram
+            a(href="#{url}").button open fenegram
+        script.
+            setTimeout(function() {
+                window.location = "#{url.replace(/\//g, '\\/')}";
+            }, 100);
