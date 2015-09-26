@@ -1,5 +1,6 @@
 @import 'handy';
 @import 'market';
+@teaserWidth: 1030px;
 
 .teaser {
     padding: 190px 0;
@@ -23,8 +24,8 @@
 .teaser__container {
     position: relative;
     z-index: 1;
-    width: 1030px;
-    padding: 0 110px 0 60px;
+    width: @teaserWidth;
+    padding-left: 60px;
     margin: 0 auto;
 }
 
@@ -45,6 +46,10 @@
     margin-bottom: 15px;
 }
 
+.teaser__text, .teaser__title {
+    text-shadow: 0 0 7px rgba(0, 0, 0, .2);
+}
+
 .teaser__handy {
     position: relative;
     float: right;
@@ -55,6 +60,11 @@
 .teaser__dots {
     margin-bottom: 40px;
     .owl-dot {
+        -webkit-user-select: none;
+           -moz-user-select: none;
+            -ms-user-select: none;
+                user-select: none;
+
         display: inline-block;
         box-sizing: border-box;
         padding: 4px;
@@ -66,14 +76,17 @@
         border-radius: 50%;
         position: relative;
         cursor: pointer;
+        span {
+            width: @dotSize - 10px;
+            height: @dotSize - 10px;
+            display: none;
+            background-color: #fff;
+            border-radius: 50%;
+        }
         &.active {
             border: 1px solid rgba(255, 255, 255, 1);
             span {
-                width: @dotSize - 10px;
-                height: @dotSize - 10px;
                 display: block;
-                background-color: #fff;
-                border-radius: 50%;
             }
         }
     }
