@@ -1,0 +1,11 @@
+- bundleName = 'ios'
+
+include blocks/page
+    block extends head
+
+    block body
+        .scroll.owl-carousel.owl-theme
+            - var scrollData = [ { title: 'Team wins' }, { title: 'Logo' } ]
+            each elem, index in scrollData
+                .scroll__elem
+                    img(src='./images/feature#{index + 1}.jpg', alt='Feature #{index}', title=elem.title)

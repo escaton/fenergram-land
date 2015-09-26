@@ -6,7 +6,12 @@ var noop = function () {};
 
 module.exports = {
     entry: {
-        ios: __dirname + '/js/ios.entry.js'
+        ios: __dirname + '/js/ios.entry.js',
+        android: __dirname + '/js/android.entry.js',
+        desktop: __dirname + '/js/desktop.entry.js',
+        'ios.tpl': 'file?name=ios.index.html!jade-html!' + __dirname + '/jade/ios.index.jade',
+        'android.tpl': 'file?name=android.index.html!jade-html!' + __dirname + '/jade/android.index.jade',
+        'desktop.tpl': 'file?name=desktop.index.html!jade-html!' + __dirname + '/jade/desktop.index.jade'
     },
     output: {
         path: __dirname + '/dist',
@@ -31,6 +36,9 @@ module.exports = {
         /*/[\/\\]bower_components[\/\\](jquery|owl\.carousel).*!/*/
     ],
     plugins: [
+        new webpack.DefinePlugin({
+            __DEV__: JSON.stringify(dev)
+        }),
         new ExtractTextPlugin("[name].css"),
         new webpack.ResolverPlugin([
             new webpack.ResolverPlugin.DirectoryDescriptionFilePlugin("bower.json", ["main"])
