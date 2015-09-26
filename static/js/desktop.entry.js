@@ -5,5 +5,5 @@ require('../less/desktop.less');
 var scroller = require('./lib/scroll');
 
 $(document).ready(function () {
-    var scroll = scroller($('.scroll'));
+    var scroll = scroller($('.scroll'), { dotsContainer: '#slide-dots' });
 });

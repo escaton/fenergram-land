@@ -1,6 +1,7 @@
 require('owl.carousel');
 
-module.exports = function (scroll) {
+module.exports = function (scroll, options) {
+    options = options || {};
     var stopAutoPlay = function () {
         scroll.trigger('stop.owl.autoplay');
         scroll.off('dragged.owl.carousel', stopAutoPlay);
@@ -14,10 +15,13 @@ module.exports = function (scroll) {
             navText: [],
             dots: true,
             autoplay: true,
-            autoplayTimeout: 3000
+            autoplayTimeout: 3000,
+            navContainer: options.navContainer || false,
+            dotsContainer: options.dotsContainer || false
         });
         scroll.on('dragged.owl.carousel', stopAutoPlay);
         var controls = scroll.find('.owl-dot');
+        controls =  options.dotsContainer ? controls.add(options.dotsContainer) : controls;
         if (controls && controls.length) {
             controls.on('click', function () {
                 stopAutoPlay();
