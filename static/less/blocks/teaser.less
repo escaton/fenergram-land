@@ -1,3 +1,5 @@
+@import 'handy';
+
 .teaser {
     padding: 240px 80px;
     background: url('/public/img/teaser.jpg') 50% 50% no-repeat;
@@ -5,11 +7,25 @@
     height: 1300px;
     box-sizing: border-box;
     position: relative;
+    z-index: 2;
 }
 
 .teaser__text {
-    padding: 50px 70px 50px @logoWith + 70px;
+    padding: 50px 70px 10px @logoWith + 70px;
     color: #fff;
     max-width: 760px;
     box-sizing: border-box;
+}
+
+.teaser__handy {
+    position: absolute;
+    right: 0;
+    z-index: -1;
+    top: 60px;
+}
+
+@media (max-width: @widthDesktop) {
+    .teaser__handy {
+        position: relative;
+    }
 }

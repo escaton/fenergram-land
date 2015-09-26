@@ -4,10 +4,12 @@ include blocks/page
     block extends head
 
     block extends body
-        .teaser
-            include blocks/logo
-            .teaser__text.
-                <span>All you need is</span>
-                <h1>Fenegram</h1>
-                <p>Fenegram is a cloud-based messenger app for Fenerbahce fans around the world with a focus on security and speed</p>
-
+        .teaser.clearfix
+            .teaser__container
+                include blocks/logo
+                .teaser__text.
+                    <span>All you need is</span>
+                    <h1>Fenegram</h1>
+                    <p>Fenegram is a cloud-based messenger app for Fenerbahce fans around the world with a focus on security and speed</p>
+            .teaser__handy
+                include blocks/handy
