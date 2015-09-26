@@ -12,16 +12,25 @@ server {
     listen 80;
     #listen [::]:80 ipv6only=on;
 
-    set $root /opt/fenegram/app/static/;
+    set $root /opt/fenegram/app/static;
     root $root;
     index index.html index.htm;
 
     # Make site accessible from http://localhost/
     server_name fenegram.com;
 
+    location /public {
+        root $root;
+    }
+
+    # temporary
+    location /boarding {
+        root $root/public;
+    }
+
     location / {
         expires 24h;
-        root /opt/fenegram/app/static/dist/;
+        root $root/dist/;
         try_files $uri @node;
     }
 
@@ -31,9 +40,5 @@ server {
         include proxy_params;
         proxy_set_header X-NginX-Proxy true;
         proxy_redirect off;
-    }
-
-    location /public {
-        root $root;
     }
 }
