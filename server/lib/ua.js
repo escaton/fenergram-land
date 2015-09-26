@@ -4,7 +4,8 @@
  *
  * @returns {String}
  */
-function getMobileOperatingSystem(userAgent) {
+function getMobileOperatingSystem(req) {
+    var userAgent = req.headers['user-agent']
     if ( userAgent.match( /iPad/i ) || userAgent.match( /iPhone/i ) || userAgent.match( /iPod/i ) ) {
         return {
             isMobile: true,
