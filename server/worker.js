@@ -10,11 +10,17 @@ var log = require('npmlog');
 
 var app = Express();
 
+app.set('env', environment);
+app.disable('x-powered-by');
+app.enable('trust proxy');
+app.disable('etag');
+
 // if (environment === 'development') {
 //     app.use(serveStatic('../static/dist', {'index': ['index.html']}));
 // }
 
 app.get('/', function(req, res) {
+
     var ua = Ua(req.headers['user-agent']);
 
     if (ua.isMobile) {
