@@ -66,14 +66,17 @@
         border-radius: 50%;
         position: relative;
         cursor: pointer;
+        span {
+            width: @dotSize - 10px;
+            height: @dotSize - 10px;
+            display: none;
+            background-color: #fff;
+            border-radius: 50%;
+        }
         &.active {
             border: 1px solid rgba(255, 255, 255, 1);
             span {
-                width: @dotSize - 10px;
-                height: @dotSize - 10px;
                 display: block;
-                background-color: #fff;
-                border-radius: 50%;
             }
         }
     }
