@@ -5,9 +5,8 @@ include blocks/page
     block extends body
         .teaser
             .teaser__container
+
                 include blocks/header
-
-
                     block extends content
                         include blocks/logo
                         h1.teaser__title.header__text Fenegram
@@ -15,10 +14,11 @@ include blocks/page
 
                 include blocks/handy
 
-                //.teaser__handy
+                .teaser__button
+                    .button
+                        .button__text Download
 
                 .teaser__content
-
                     p.teaser__text.
                         Fenergram is a cloud-based mobile messaging
                         app for Fenerbahce fans around the world
