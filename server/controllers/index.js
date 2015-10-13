@@ -17,7 +17,7 @@ exports.index = function (req, res) {
     var ua = Ua(req);
 
     if (ua.isMobile) {
-        res.sendFile(path.join(config.static.path, 'ios.boarding.html'));
+        res.sendFile(path.join(config.static.path, 'ios.index.html'));
     } else {
         res.sendFile(path.join(config.static.path, 'desktop.index.html'));
     }
