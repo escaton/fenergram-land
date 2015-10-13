@@ -12,7 +12,9 @@ include blocks/page
                         include blocks/logo
                         h1.teaser__title.header__text Fenegram
 
-                include blocks/handy
+                include blocks/phone
+                    block extends screen
+                        include blocks/carousel
 
                 .teaser__button
                     a.button(href='https://appmetrica.yandex.com/serve/960962922887021660', target='_blank')

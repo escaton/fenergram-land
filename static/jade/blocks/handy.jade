@@ -1,5 +1,0 @@
-div(class=['handy', 'handy_type_' + bundleName])
-    .handy__screen.scroll.owl-carousel.owl-theme
-        each elem, index in scrollData
-            .scroll__elem("data-title"=elem.title, "data-subtitle"=elem.subtitle)
-                img(src='/public/img/screens/#{elem.picture}.jpg', alt=elem.subtitle, title=elem.title)

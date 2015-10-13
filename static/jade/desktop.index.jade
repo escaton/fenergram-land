@@ -8,8 +8,10 @@ include blocks/page
         .teaser.clearfix
             .teaser__container
                 include blocks/logo
-                .teaser__handy
-                    include blocks/handy
+                .teaser__phone
+                    include blocks/phone
+                        block extends screen
+                            include blocks/carousel
                 .teaser__content
                     span Tek ihtiyacın
                     h1.teaser__title Fenegram
