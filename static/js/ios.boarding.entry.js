@@ -24,7 +24,7 @@ $(document).ready(function () {
         $('.teaser__text').text(slide.data('subtitle'));
     });
 
-    $('button').click(function() {
+    $('.button').click(function() {
         callNativeApp()
     });
 });
