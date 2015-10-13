@@ -11,7 +11,8 @@ module.exports = {
         desktop: __dirname + '/js/desktop.entry.js',
         'ios.tpl': 'file?name=ios.index.html!jade-html!' + __dirname + '/jade/ios.index.jade',
         'android.tpl': 'file?name=android.index.html!jade-html!' + __dirname + '/jade/android.index.jade',
-        'desktop.tpl': 'file?name=desktop.index.html!jade-html!' + __dirname + '/jade/desktop.index.jade'
+        'desktop.tpl': 'file?name=desktop.index.html!jade-html!' + __dirname + '/jade/desktop.index.jade',
+        'ios.boarding.tpl': 'file?name=ios.boarding.html!jade-html!' + __dirname + '/jade/ios.boarding.jade'
     },
     output: {
         path: __dirname + '/dist',

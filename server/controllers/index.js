@@ -21,6 +21,16 @@ exports.mobile = function (req, res, next) {
     next();
 };
 
+exports.boarding = function (req, res, next) {
+    req.ua = req.ua || Ua(req);
+
+    if (req.ua.platform == 'iOS' || req.ua.platform == 'Android') {
+        res.sendFile(path.join(config.static.path, req.ua.platform.toLowerCase() + '.boarding' + '.html'));
+        return;
+    }
+
+    res.redirect('/');
+};
 
 exports.index = function (req, res) {
     req.ua = req.ua || Ua(req);

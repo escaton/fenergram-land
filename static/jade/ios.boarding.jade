@@ -1,0 +1,23 @@
+- bundleName = 'ios'
+
+include blocks/page
+    block extends head
+    block extends body
+        .teaser
+            .teaser__container
+
+                include blocks/header
+                    block extends content
+                        include blocks/logo
+                        h1.teaser__title.header__text Fenegram
+
+                include blocks/handy
+
+                .teaser__button
+                    a.button(href='https://appmetrica.yandex.com/serve/960962922887021660', target='_blank')
+                        .button__text İndir
+
+                .teaser__content
+                    p.teaser__text.
+
+                    //#slide-dots.teaser__dots

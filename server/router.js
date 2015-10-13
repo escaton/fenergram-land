@@ -15,9 +15,13 @@ module.exports = function(app) {
     app.get('/', index.index);
     app.get('/desktop', index.desktop, index.index);
     app.get('/mobile', index.mobile, index.index);
+    app.get('/boarding', index.boarding, index.index);
+
+    app.get('/ios-boarding', index.mobile, index.boarding);
+
     app.get('/share/:preset?', share.index);
-    app.get('/~app/botstore', botstore.index)
-    app.get('/add/:login', adduser.index)
+    app.get('/~app/botstore', botstore.index);
+    app.get('/add/:login', adduser.index);
 
     if (environment === 'development') {
         app.use(serveStatic(config.static.path));
