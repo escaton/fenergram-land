@@ -13,11 +13,8 @@ var adduser = require('./controllers/adduser');
 module.exports = function(app) {
 
     app.get('/', index.index);
-    app.get('/desktop', index.desktop, index.index);
-    app.get('/mobile', index.mobile, index.index);
-    app.get('/boarding', index.boarding, index.index);
-
-    app.get('/ios-boarding', index.mobile, index.boarding);
+    app.get('/mobile', index.mobile);
+    app.get('/boarding', index.boarding);
 
     app.get('/share/:preset?', share.index);
     app.get('/~app/botstore', botstore.index);
