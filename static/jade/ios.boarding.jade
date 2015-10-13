@@ -1,4 +1,5 @@
 - bundleName = 'ios.boarding'
+- var scrollData = [{ title: 'İhtiyacınız olan her yerde', subtitle: 'İster cep telefonunda, ister masa üstünde ve hatta çok yakında akıllı saatlerinizde', picture: 'cloud' }, { title: '3G dostu', subtitle: 'Mesalarınız için internet kotanızı boş yere bitirmeyin', picture: 'infinity' }, { title: 'Hızlı', subtitle: 'Dünyanın en hızlı mesajlaşma teknolojisiyle anında mesajlanın, anında senkronize olun', picture: 'speed' }, { title: 'Senin Fenerbahçen', subtitle: 'Her zaman takımınınla iletişimde ol', picture: 'news' }, { title: 'Senin taraftar arkadaşların', subtitle: 'Diğer taraftarlarla bağlantıda ol; onlarla her şeyi paylaş ve konuş', picture: 'chat' }, { title: 'Eğlen', subtitle: 'Arkadaşların yarışmalara katıl. Hem eğlen, hem kazan', picture: 'selfie' }]
 
 include blocks/page
     block extends head
@@ -6,18 +7,13 @@ include blocks/page
         .teaser
             .teaser__container
 
-                include blocks/header
-                    block extends content
-                        include blocks/logo
-                        h1.teaser__title.header__text Fenegram
-
                 include blocks/handy
 
-                .teaser__button
-                    a.button(href='https://appmetrica.yandex.com/serve/960962922887021660', target='_blank')
-                        .button__text İndir
-
                 .teaser__content
-                    p.teaser__text.
 
-                    //#slide-dots.teaser__dots
+                    #slide-dots.teaser__dots
+
+                    h1.teaser__title Fenegram
+
+                    p.teaser__text
+

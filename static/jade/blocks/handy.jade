@@ -1,6 +1,5 @@
 div(class=['handy', 'handy_type_' + bundleName])
     .handy__screen.scroll.owl-carousel.owl-theme
-        - var scrollData = [ { title: 'Fenegram bulut teknolojisi tabanlı yeni nesil bir mesajlaşma uygulamasıdır.', subtitle: 'Fenerbahçe için özel tasarlanmış bu uygulamayla hem Fenerbahçe ve taraftarlarıyla bağlantıda kalacaksın, hem de onlarla eğlenip dünyanın en hızlı ve 3G dostu mesajlaşma uygulamasını kullanacaksın', picture: 'messenger' }, { title: 'Senin Fenerbahçen', subtitle: 'Her zaman takımınınla iletişimde ol', picture: 'news' }, { title: 'Senin taraftar arkadaşların', subtitle: 'Diğer taraftarlarla bağlantıda ol; onlarla her şeyi paylaş ve konuş', picture: 'chat' }, { title: 'Eğlen', subtitle: 'Arkadaşların yarışmalara katıl. Hem eğlen, hem kazan', picture: 'selfie' } ]
         each elem, index in scrollData
             .scroll__elem("data-title"=elem.title, "data-subtitle"=elem.subtitle)
                 img(src='/public/img/screens/#{elem.picture}.jpg', alt=elem.subtitle, title=elem.title)
