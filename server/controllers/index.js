@@ -5,10 +5,25 @@ var environment = process.env.NODE_ENV || 'development';
 var Ua = require('../lib/ua');
 var path = require('path');
 
-exports.index = function(req, res) {
-    var ua = Ua(req);
+exports.desktop = function (req, res, next) {
+    req.ua = {
+        isMobile: false,
+        platform: 'desktop'
+    };
+    next();
+};
 
-    // temp
-    ua.platform = 'desktop';
-    res.sendFile(path.join(config.static.path, ua.platform.toLowerCase() + '.index' + '.html'));
-}
+exports.mobile = function (req, res, next) {
+    req.ua = {
+        isMobile: true,
+        platform: 'iOS'
+    };
+    next();
+};
+
+
+exports.index = function (req, res) {
+    //req.ua = Ua(req);
+
+    res.sendFile(path.join(config.static.path, req.ua.platform.toLowerCase() + '.index' + '.html'));
+};

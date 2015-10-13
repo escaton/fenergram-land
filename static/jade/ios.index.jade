@@ -2,10 +2,29 @@
 
 include blocks/page
     block extends head
+    block extends body
+        .teaser
+            .teaser__container
+                include blocks/header
 
-    block body
-        .scroll.owl-carousel.owl-theme
-            - var scrollData = [ { title: 'Team wins' }, { title: 'Logo' } ]
-            each elem, index in scrollData
-                .scroll__elem
-                    img(src='/public/img/feature#{index + 1}.jpg', alt='Feature #{index}', title=elem.title)
+
+                    block extends content
+                        include blocks/logo
+                        h1.teaser__title.header__text Fenegram
+
+
+                include blocks/handy
+
+                //.teaser__handy
+
+                .teaser__content
+
+                    p.teaser__text.
+                        Fenergram is a cloud-based mobile messaging
+                        app for Fenerbahce fans around the world
+                        with a focus on security and speed.
+                    #slide-dots.teaser__dots
+                    .teaser__markets
+                        a.market.market_play(href='https://appmetrica.yandex.com/serve/960962922887021660', target='_blank')
+                        a.market.market_appstore(href='#!store.apple.com')
+        include  blocks/footer
