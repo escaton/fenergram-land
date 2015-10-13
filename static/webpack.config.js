@@ -9,6 +9,7 @@ module.exports = {
         ios: __dirname + '/js/ios.entry.js',
         android: __dirname + '/js/android.entry.js',
         desktop: __dirname + '/js/desktop.entry.js',
+        'ios.boarding': __dirname + '/js/ios.boarding.entry.js',
         'ios.tpl': 'file?name=ios.index.html!jade-html!' + __dirname + '/jade/ios.index.jade',
         'android.tpl': 'file?name=android.index.html!jade-html!' + __dirname + '/jade/android.index.jade',
         'desktop.tpl': 'file?name=desktop.index.html!jade-html!' + __dirname + '/jade/desktop.index.jade',
