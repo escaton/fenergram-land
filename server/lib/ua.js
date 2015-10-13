@@ -14,7 +14,7 @@ function getMobileOperatingSystem(req) {
     } else if ( userAgent.match( /Android/i ) ) {
         return {
             isMobile: true,
-            platform: 'Android'
+            platform: 'iOS' //TODO: 'Android'
         };
     } else if ( userAgent.match( /facebookexternalhit/i ) ) {
         return {
