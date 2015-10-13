@@ -13,7 +13,7 @@ module.exports = function (scroll, options) {
             autoWidth: true,
             nav: false,
             navText: [],
-            dots: true,
+            dots: !!options.dotsContainer,
             autoplay: true,
             autoplayTimeout: 3000,
             navContainer: options.navContainer || false,
