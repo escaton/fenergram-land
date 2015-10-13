@@ -38,5 +38,10 @@ exports.boarding = function (req, res, next) {
 exports.index = function (req, res) {
     req.ua = req.ua || Ua(req);
 
-    res.sendFile(path.join(config.static.path, req.ua.platform.toLowerCase() + '.index' + '.html'));
+    if (req.ua.isMobile) {
+        res.sendFile(path.join(config.static.path, 'ios.boarding.html'));
+    } else {
+        res.sendFile(path.join(config.static.path, req.ua.platform.toLowerCase() + '.index' + '.html'));
+    }
+
 };
