@@ -25,9 +25,12 @@ exports.boarding = function (req, res, next) {
     req.ua = req.ua || Ua(req);
 
     // if (req.ua.platform == 'iOS' || req.ua.platform == 'Android') {
-    res.sendFile(path.join(config.static.path, req.ua.platform.toLowerCase() + '.boarding' + '.html'));
+        // res.sendFile(path.join(config.static.path, req.ua.platform.toLowerCase() + '.boarding' + '.html'));
         // return;
     // }
+
+    res.sendFile(path.join(config.static.path, 'ios.boarding.html'));
+
 
     // res.redirect(302, '/');
 };
