@@ -23,11 +23,6 @@ server {
         root $root;
     }
 
-    # temporary
-    location /boarding {
-        root $root/public;
-    }
-
     location / {
         expires 24h;
         root $root/dist/;
