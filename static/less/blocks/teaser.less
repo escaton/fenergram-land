@@ -30,22 +30,23 @@
 }
 
 .teaser__content {
-  padding: 0 70px 10px @logoWith + 30px;
+  padding-left: @textPadding;
   color: #fff;
-  width: 380px;
   box-sizing: content-box;
 }
 
 .teaser__title {
-  font-size: 70px;
+  font-size: @headerFontSize;
   margin: 0;
   padding-left: 0;
   line-height: 1em;
   color: #fff;
+  font-weight: 200;
 }
 
 .teaser__text {
-  margin-bottom: 15px;
+  width: 380px;
+  margin: @textMargin;
 }
 
 .teaser__text, .teaser__title {
@@ -61,6 +62,8 @@
 
 .teaser__dots {
   margin-bottom: 40px;
+  margin-top: 20px;
+
   .owl-dot {
     -webkit-user-select: none;
     -moz-user-select: none;
