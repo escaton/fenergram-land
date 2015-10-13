@@ -14,11 +14,12 @@ exports.desktop = function (req, res, next) {
 };
 
 exports.mobile = function (req, res, next) {
-    req.ua = {
-        isMobile: true,
-        platform: 'iOS'
-    };
-    next();
+    // req.ua = {
+    //     isMobile: true,
+    //     platform: 'iOS'
+    // };
+    // next();
+    res.sendFile(path.join(config.static.path, 'ios.index.html'));
 };
 
 exports.boarding = function (req, res, next) {
