@@ -5,7 +5,7 @@ $ = require('jquery');
 /* logic */
 var scroller = require('./lib/scroll');
 
-$(document).ready(function () {
+$(window).load(function () {
     var scroll = scroller($('.scroll'), { dotsContainer: '#slide-dots' });
     scroll.on('changed.owl.carousel', function (event) {
         var index = event.item.index || 0;

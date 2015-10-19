@@ -13,7 +13,7 @@ function callNativeApp () {
     }
 }
 
-$(document).ready(function () {
+$(window).load(function () {
     var scroll = scroller($('.scroll'));
     scroll.on('changed.owl.carousel', function (event) {
         var index = event.item.index || 0;

@@ -3,6 +3,6 @@ require('../less/android.less');
 
 /* logic */
 
-$(document).ready(function () {
+$(window).load(function () {
     $('body').text('android page loaded')
 });
